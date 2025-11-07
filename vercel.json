@@ -4,20 +4,12 @@
     {
       "src": "*.html",
       "use": "@vercel/static"
-    },
-    {
-      "src": "*.js",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "*.css",
-      "use": "@vercel/static"
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "/$1"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ],
   "headers": [
@@ -29,7 +21,7 @@
           "value": "DENY"
         },
         {
-          "key": "X-Content-Type-Options",
+          "key": "X-Content-Type-Options", 
           "value": "nosniff"
         },
         {
