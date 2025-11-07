@@ -6,6 +6,7 @@ const $$ = s => Array.from(document.querySelectorAll(s));
 function initializePortfolio() {
   console.log('Initializing portfolio...');
   
+  // Emergency loader timeout
   setTimeout(() => {
     const loader = $('#loader');
     if (loader && !loader.classList.contains('hidden')) {
@@ -25,10 +26,13 @@ function initializePortfolio() {
   initBackToTop();
   initTechIcons();
   initRefinedProjectCards();
+  initCertificateCards();
+  initLegacyModalSupport();
   
   console.log('Portfolio initialization complete');
 }
 
+// Initialize when DOM is ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initializePortfolio);
 } else {
@@ -54,7 +58,7 @@ function initLoading() {
     setTimeout(() => {
       hideLoader();
       initAnimations();
-      initSkillsAnimation(); 
+      initSkillsAnimation();
     }, 800);
   });
   
@@ -126,7 +130,7 @@ function initCursor() {
     cursor.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
   });
   
-  const hoverables = ['a', 'button', '.project-btn', '.btn', '.contact-link', '.tool-chip', '.tag', '.preview-btn-refined', '.modal-btn-refined'];
+  const hoverables = ['a', 'button', '.project-btn', '.btn', '.contact-link', '.tool-chip', '.tag', '.preview-btn-refined', '.modal-btn-refined', '.certificate-download'];
   hoverables.forEach(sel => {
     $$(sel).forEach(el => {
       el.addEventListener('mouseenter', () => cursor.classList.add('big'));
@@ -208,6 +212,21 @@ function initAnimations() {
       }
     });
   });
+  
+  gsap.utils.toArray('.certificate-card').forEach((card, i) => {
+    gsap.from(card, {
+      opacity: 0,
+      y: 30,
+      duration: 0.8,
+      delay: i * 0.1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: card,
+        start: 'top 85%',
+        toggleActions: 'play none none none'
+      }
+    });
+  });
 }
 
 function initFallbackAnimations() {
@@ -237,6 +256,13 @@ function initFallbackAnimations() {
     project.style.transform = 'translateY(20px)';
     project.style.transition = `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s`;
     observer.observe(project);
+  });
+  
+  $$('.certificate-card').forEach((card, i) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s`;
+    observer.observe(card);
   });
 }
 
@@ -540,7 +566,7 @@ function initRefinedProjectCards() {
     });
   });
 
-  // PDF preview buttons
+  // PDF preview buttons for brand guides
   $$('.project-card-refined .preview-btn-refined[data-action="pdf-preview"]').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -561,6 +587,40 @@ function initRefinedProjectCards() {
     card.addEventListener('click', (e) => {
       // Don't trigger if clicking on button or tech icons
       if (e.target.closest('.preview-btn-refined') || e.target.closest('.tech-icon')) {
+        return;
+      }
+      
+      const pdfUrl = card.getAttribute('data-pdf');
+      if (pdfUrl) {
+        window.open(pdfUrl, '_blank');
+      }
+    });
+  });
+}
+
+// ===== CERTIFICATE CARD FUNCTIONALITY =====
+function initCertificateCards() {
+  // PDF preview buttons for certificates
+  $$('.certificate-card .preview-btn-refined[data-action="pdf-preview"]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const card = btn.closest('.certificate-card');
+      const pdfUrl = card.getAttribute('data-pdf');
+      
+      if (!pdfUrl) {
+        alert('No PDF file set for this certificate.');
+        return;
+      }
+      
+      window.open(pdfUrl, '_blank');
+    });
+  });
+
+  // Certificate card click functionality (opens PDF on card click)
+  $$('.certificate-card.pdf-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      // Don't trigger if clicking on button or download link
+      if (e.target.closest('.preview-btn-refined') || e.target.closest('.certificate-download')) {
         return;
       }
       
@@ -689,7 +749,7 @@ function openFigmaModal(imageSrc, title) {
   }
 }
 
-// Initialize modals on click for old project cards (backward compatibility)
+// ===== LEGACY MODAL SUPPORT =====
 function initLegacyModalSupport() {
   const modal = $('#modal');
   const iframe = $('#modal-iframe');
@@ -729,7 +789,42 @@ window.addEventListener('error', (e) => {
   }
 });
 
-// Initialize legacy modal support for backward compatibility
-document.addEventListener('DOMContentLoaded', function() {
-  initLegacyModalSupport();
-});
+// ===== PERFORMANCE OPTIMIZATIONS =====
+// Debounce scroll events for better performance
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
+// Optimized scroll handlers
+window.addEventListener('scroll', debounce(() => {
+  // Any scroll-based functionality can go here
+}, 10));
+
+// Preload critical images
+function preloadCriticalImages() {
+  const criticalImages = [
+    './img/my-image.jpg',
+    './img/nexuscart-thumbnail.png',
+    './img/jobconnect-thumbnail.png'
+  ];
+  
+  criticalImages.forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+}
+
+// Initialize performance optimizations when page is idle
+if ('requestIdleCallback' in window) {
+  window.requestIdleCallback(preloadCriticalImages);
+} else {
+  setTimeout(preloadCriticalImages, 1000);
+}
