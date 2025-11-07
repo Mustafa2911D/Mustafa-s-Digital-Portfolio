@@ -1,0 +1,922 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Meta & SEO -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mustafa Damon — Multimedia Designer & Developer | UI/UX Specialist</title>
+<meta name="description" content="Portfolio of Mustafa Damon, a multimedia designer specializing in UI/UX, web design, and brand identity. View my projects and get in touch.">
+<meta name="keywords" content="multimedia designer, web designer, UI/UX, brand identity, Cape Town, portfolio, Mustafa Damon">
+<meta name="author" content="Mustafa Damon">
+<meta name="robots" content="index, follow">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="img/MD Logo1.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/MD Logo1.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/MD Logo1.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/MD Logo1.png">
+<meta name="theme-color" content="#FF7600">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mustafa Damon",
+    "jobTitle": "Multimedia Designer",
+    "url": "https://mustafadamon.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/mustafa-damon-05b55b237/"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance"
+    },
+    "description": "Multimedia designer specializing in UI/UX, web design, and brand identity",
+    "knowsAbout": ["UI/UX Design", "Web Design", "Brand Identity", "Figma", "Adobe Creative Suite"]
+  }
+  </script>
+
+  <!-- Preload & Performance -->
+  <link rel="preload" href="style.css" as="style">
+  <link rel="preload" href="script.js" as="script">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- External Resources -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- ===== LOADING SCREEN ===== -->
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <div class="loader-logo">MD</div>
+      <div class="loader-progress">
+        <div class="loader-bar"></div>
+      </div>
+      <div class="loader-text">Loading Portfolio</div>
+    </div>
+  </div>
+
+  <!-- ===== HEADER & NAVIGATION ===== -->
+  <header>
+    <nav role="navigation" aria-label="Main navigation">
+      <div class="brand">
+        <div class="logo">MD</div>
+        <div class="brand-text">
+          <h1>Mustafa Damon</h1>
+          <div class="brand-subtitle">Multimedia Designer</div>
+        </div>
+      </div>
+
+      <div class="navlinks" id="navlinks" role="menubar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#portfolio">Websites</a>
+        <a href="#figma">Figma Projects</a>
+        <a href="#brand-guides">Brand Guides</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark theme" title="Toggle theme" aria-pressed="false">
+          <i class="fa-solid fa-sun"></i>
+          <span class="toggle-text">Light</span>
+        </button>
+        <button id="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navlinks">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== HERO SECTION ===== -->
+  <main id="home" class="hero" role="main" aria-labelledby="hero-title">
+    <div class="hero-inner">
+      <!-- Hero Content -->
+      <div class="hero-copy">
+        <div class="eyebrow">Multimedia Design • Web Design • UI • UX</div>
+        <h1 class="name" id="hero-title">Hi, I'm <span style="color:var(--accent)">Mustafa Damon</span></h1>
+        <div class="role" id="type-rotating">Multimedia Designer</div>
+        <p class="lead">I build modern, intentional digital experiences — websites, identities, and motion work that blend craft with strategy. I'm collaborative by nature, a systems thinker, and user-first in my approach to design.</p>
+
+        <div class="cta-row">
+          <button class="btn" id="view-portfolio">View portfolio</button>
+          <a href="#contact" class="btn ghost">Contact</a>
+          <a href="downloads/Mustafa Damon _ CV1.pdf" class="btn resume-btn" download aria-label="Download my resume">
+            <i class="fas fa-download"></i> Resume
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Visual -->
+      <div class="hero-card" id="parallax-area" aria-hidden="true">
+        <div class="hero-visual-3d">
+          <!-- Main 3D Cube -->
+          <div class="floating-cube">
+            <div class="cube-face front"></div>
+            <div class="cube-face back"></div>
+            <div class="cube-face right"></div>
+            <div class="cube-face left"></div>
+            <div class="cube-face top"></div>
+            <div class="cube-face bottom"></div>
+          </div>
+          
+          <!-- Floating Orbs -->
+          <div class="orb orb-1"></div>
+          <div class="orb orb-2"></div>
+          <div class="orb orb-3"></div>
+          
+          <!-- Connection Lines -->
+          <div class="connection-line line-1"></div>
+          <div class="connection-line line-2"></div>
+          <div class="connection-line line-3"></div>
+          
+          <!-- Digital Particles -->
+          <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+          </div>
+        </div>
+
+        <div class="tags">
+          <div class="tag">UI/UX</div>
+          <div class="tag">Web</div>
+          <div class="tag">Brand</div>
+          <div class="tag">Motion</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <div class="scroll-text">Scroll to explore</div>
+    </div>
+  </main>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" aria-labelledby="about-title">
+    <h2 class="section-title" id="about-title">About Me</h2>
+
+    <div class="about-grid">
+      <!-- Profile Photo -->
+      <div class="about-photo">
+        <img src="img/my-image.jpg" alt="Mustafa Damon — portrait">
+        <div class="photo-overlay">
+          <div class="photo-badge">
+            <i class="fas fa-award"></i>
+            <span>1+ Years Experience</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Content -->
+      <div class="about-content">
+        <p class="about-intro">
+          I'm a multimedia designer focused on clean interfaces, strong visual systems, and micro-interactions. I combine visual design, front-end craft, and storytelling to help brands stand out.
+        </p>
+
+        <!-- Highlights -->
+        <div class="about-highlights">
+          <div class="highlight">
+            <i class="fas fa-palette"></i>
+            <div>
+              <h4>Design & Aesthetics</h4>
+              <p>Creating visually compelling designs with attention to detail</p>
+            </div>
+          </div>
+          <div class="highlight">
+            <i class="fas fa-code"></i>
+            <div>
+              <h4>Development</h4>
+              <p>Bringing designs to life with clean, efficient code</p>
+            </div>
+          </div>
+          <div class="highlight">
+            <i class="fas fa-users"></i>
+            <div>
+              <h4>User Experience</h4>
+              <p>Designing intuitive experiences that users love</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="skills-section">
+          <h3>Skills</h3>
+          <div class="skills-visualization">
+            <div class="skill-bar">
+              <div class="skill-info">
+                <span>UI/UX Design</span>
+                <span>90%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar" data-width="90"></div>
+              </div>
+            </div>
+            
+            <div class="skill-bar">
+              <div class="skill-info">
+                <span>HTML/CSS</span>
+                <span>100%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar" data-width="100"></div>
+              </div>
+            </div>
+            
+            <div class="skill-bar">
+              <div class="skill-info">
+                <span>JavaScript</span>
+                <span>90%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar" data-width="90"></div>
+              </div>
+            </div>
+            
+            <div class="skill-bar">
+              <div class="skill-info">
+                <span>React</span>
+                <span>75%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar" data-width="75"></div>
+              </div>
+            </div>
+            
+            <div class="skill-bar">
+              <div class="skill-info">
+                <span>Figma</span>
+                <span>88%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar" data-width="88"></div>
+              </div>
+            </div>
+            
+            <div class="skill-bar">
+              <div class="skill-info">
+                <span>Adobe Creative Suite</span>
+                <span>80%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar" data-width="80"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="experience-section">
+          <h3>Experience</h3>
+          <div class="experience">
+            <div class="exp-item">
+              <div class="exp-date">2023 - Present</div>
+              <div class="exp-details">
+                <h4>Freelance Designer & Developer</h4>
+                <p>Creating websites and brand identities for various clients</p>
+              </div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-date">Feb 2025 - Present</div>
+              <div class="exp-details">
+                <h4>Internship — FCTEC</h4>
+                <p>Gained industry experience in web development and design</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools & Technologies -->
+        <div class="about-tools">
+          <h3>Tools & Technologies</h3>
+          <div class="tools-grid">
+            <div class="tool-chip"><i class="fa-brands fa-figma"></i> Figma</div>
+            <div class="tool-chip"><i class="fa-brands fa-react"></i> React</div>
+            <div class="tool-chip"><i class="fa-brands fa-node-js"></i> Node.js</div>
+            <div class="tool-chip"><i class="fas fa-server"></i> Express</div>
+            <div class="tool-chip"><i class="fas fa-database"></i> MongoDB</div>
+            <div class="tool-chip"><i class="fa-brands fa-html5"></i> HTML</div>
+            <div class="tool-chip"><i class="fa-brands fa-css3-alt"></i> CSS</div>
+            <div class="tool-chip"><i class="fa-brands fa-square-js"></i> JavaScript</div>
+            <div class="tool-chip"><i class="fa-brands fa-bootstrap"></i> Bootstrap</div>
+            <div class="tool-chip"><i class="fa-brands fa-css3-alt"></i> Tailwind CSS</div>
+            <div class="tool-chip"><i class="fa-brands fa-wordpress"></i> WordPress</div>
+            <div class="tool-chip"><i class="fa-brands fa-shopify"></i> Shopify</div>
+            <div class="tool-chip"><i class="fa-solid fa-palette"></i> Canva</div>
+            <div class="tool-chip"><i class="fa-solid fa-code"></i> VS Code</div>
+            <div class="tool-chip">
+              <div class="software-logo">
+                <img src="https://www.svgrepo.com/show/452149/adobe-photoshop.svg" alt="Adobe Photoshop" style="width: 20px; height: 20px; object-fit: contain;">
+              </div>
+              Photoshop
+            </div>
+            <div class="tool-chip">
+              <div class="software-logo">
+                <img src="https://www.svgrepo.com/show/452147/adobe-illustrator.svg" alt="Adobe Illustrator" style="width: 20px; height: 20px; object-fit: contain;">
+              </div>
+              Illustrator
+            </div>
+            <div class="tool-chip">
+              <div class="software-logo">
+                <img src="https://www.svgrepo.com/show/303188/indesign-cc-logo.svg" alt="Adobe InDesign" style="width: 20px; height: 20px; object-fit: contain;">
+              </div>
+              InDesign
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="about-cta">
+          <a href="#portfolio" class="btn">See Work</a>
+          <a href="#contact" class="btn ghost">
+            <i class="fas fa-paper-plane"></i> Hire Me
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ===== PORTFOLIO: WEBSITES ===== -->
+<section id="portfolio" aria-labelledby="portfolio-title">
+  <h2 class="section-title" id="portfolio-title">Websites</h2>
+  <p class="lead-muted">Professional web development projects showcasing responsive design and modern development practices.</p>
+  
+  <div class="portfolio-grid-refined" id="projects-grid">
+    <!-- NexusCart -->
+    <article class="project-card-refined" data-title="NexusCart" data-src="https://nexuscart-peach.vercel.app/home">
+      <div class="card-image-section">
+        <div class="thumb" style="background-image:url('img/nexuscart-thumbnail.png')"></div>
+        <div class="overlay"></div>
+      </div>
+      <div class="card-content-section">
+        <h3>NexusCart E-commerce</h3>
+        <p class="project-description-refined">Full-stack MERN e-commerce platform with user authentication, product management, and secure payment processing. Features modern UI/UX and responsive design.</p>
+        <div class="card-footer-refined">
+          <div class="tech-stack-refined">
+            <div class="tech-icon" title="React"><i class="fa-brands fa-react"></i></div>
+            <div class="tech-icon" title="Node.js"><i class="fa-brands fa-node-js"></i></div>
+            <div class="tech-icon" title="MongoDB"><i class="fas fa-database"></i></div>
+            <div class="tech-icon" title="Express"><i class="fas fa-server"></i></div>
+          </div>
+          <button class="preview-btn-refined" data-action="open" data-src="https://nexuscart-peach.vercel.app/home">
+            <i class="fas fa-external-link-alt"></i> Preview
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- JobConnect -->
+    <article class="project-card-refined" data-title="JobConnect" data-src="https://jobconnect-platform-zeta.vercel.app/login">
+      <div class="card-image-section">
+        <div class="thumb" style="background-image:url('img/jobconnect-thumbnail.png')"></div>
+        <div class="overlay"></div>
+      </div>
+      <div class="card-content-section">
+        <h3>JobConnect Platform</h3>
+        <p class="project-description-refined">MERN stack job portal connecting employers with candidates. Includes real-time messaging, application tracking, and advanced filtering systems.</p>
+        <div class="card-footer-refined">
+          <div class="tech-stack-refined">
+            <div class="tech-icon" title="React"><i class="fa-brands fa-react"></i></div>
+            <div class="tech-icon" title="Node.js"><i class="fa-brands fa-node-js"></i></div>
+            <div class="tech-icon" title="MongoDB"><i class="fas fa-database"></i></div>
+            <div class="tech-icon" title="Express"><i class="fas fa-server"></i></div>
+          </div>
+          <button class="preview-btn-refined" data-action="open" data-src="https://jobconnect-platform-zeta.vercel.app/login">
+            <i class="fas fa-external-link-alt"></i> Preview
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- PnP Website -->
+    <article class="project-card-refined" data-title="PnP Website" data-src="https://sweet-cassata-8d96b1.netlify.app/">
+      <div class="card-image-section">
+        <div class="thumb" style="background-image:url('img/pnp-thumbnail.png')"></div>
+        <div class="overlay"></div>
+      </div>
+      <div class="card-content-section">
+        <h3>PnP Website</h3>
+        <p class="project-description-refined">Competition entry for Pick n Pay, achieving 3rd place. Designed and developed a responsive promotional website demonstrating strong UI/UX principles and collaborative teamwork.</p>
+        <div class="card-footer-refined">
+          <div class="tech-stack-refined">
+            <div class="tech-icon" title="HTML5"><i class="fa-brands fa-html5"></i></div>
+            <div class="tech-icon" title="CSS3"><i class="fa-brands fa-css3-alt"></i></div>
+            <div class="tech-icon" title="JavaScript"><i class="fa-brands fa-js"></i></div>
+          </div>
+          <button class="preview-btn-refined" data-action="open" data-src="https://sweet-cassata-8d96b1.netlify.app/">
+            <i class="fas fa-external-link-alt"></i> Preview
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Health Website -->
+    <article class="project-card-refined" data-title="Health Website" data-src="https://sparkly-daifuku-93191d.netlify.app/">
+      <div class="card-image-section">
+        <div class="thumb" style="background-image:url('img/health-thumbnail.png')"></div>
+        <div class="overlay"></div>
+      </div>
+      <div class="card-content-section">
+        <h3>Health & Wellness Platform</h3>
+        <p class="project-description-refined">Educational health website featuring interactive content and responsive design. Developed as part of academic curriculum to demonstrate comprehensive web development skills.</p>
+        <div class="card-footer-refined">
+          <div class="tech-stack-refined">
+            <div class="tech-icon" title="HTML5"><i class="fa-brands fa-html5"></i></div>
+            <div class="tech-icon" title="CSS3"><i class="fa-brands fa-css3-alt"></i></div>
+            <div class="tech-icon" title="JavaScript"><i class="fa-brands fa-js"></i></div>
+          </div>
+          <button class="preview-btn-refined" data-action="open" data-src="https://sparkly-daifuku-93191d.netlify.app/">
+            <i class="fas fa-external-link-alt"></i> Preview
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- SafeShelterCT -->
+    <article class="project-card-refined" data-title="SafeShelterCT" data-src="https://timely-frangipane-961ef5.netlify.app/">
+      <div class="card-image-section">
+        <div class="thumb" style="background-image:url('img/safeshelter-thumbnail.png')"></div>
+        <div class="overlay"></div>
+      </div>
+      <div class="card-content-section">
+        <h3>SafeShelterCT</h3>
+        <p class="project-description-refined">Tech-enabled housing solution addressing urban housing challenges. Features AR preview capabilities and social integration, demonstrating innovative problem-solving through design.</p>
+        <div class="card-footer-refined">
+          <div class="tech-stack-refined">
+            <div class="tech-icon" title="HTML5"><i class="fa-brands fa-html5"></i></div>
+            <div class="tech-icon" title="CSS3"><i class="fa-brands fa-css3-alt"></i></div>
+            <div class="tech-icon" title="JavaScript"><i class="fa-brands fa-js"></i></div>
+          </div>
+          <button class="preview-btn-refined" data-action="open" data-src="https://timely-frangipane-961ef5.netlify.app/">
+            <i class="fas fa-external-link-alt"></i> Preview
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Glow & Go Beauty Studio -->
+    <article class="project-card-refined" data-title="Glow & Go Beauty Studio" data-src="https://melodious-pithivier-195006.netlify.app/">
+      <div class="card-image-section">
+        <div class="thumb" style="background-image:url('img/glow&go-thumbnail.png')"></div>
+        <div class="overlay"></div>
+      </div>
+      <div class="card-content-section">
+        <h3>Glow & Go Beauty Studio</h3>
+        <p class="project-description-refined">Modern beauty studio brand website with sleek, fashion-forward aesthetic. Designed for busy professionals seeking efficient beauty services with premium user experience.</p>
+        <div class="card-footer-refined">
+          <div class="tech-stack-refined">
+            <div class="tech-icon" title="HTML5"><i class="fa-brands fa-html5"></i></div>
+            <div class="tech-icon" title="Tailwind CSS"><i class="fa-solid fa-wind"></i></div>
+            <div class="tech-icon" title="JavaScript"><i class="fa-brands fa-js"></i></div>
+          </div>
+          <button class="preview-btn-refined" data-action="open" data-src="https://melodious-pithivier-195006.netlify.app/">
+            <i class="fas fa-external-link-alt"></i> Preview
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- AL-NOOR Islamic Streetwear -->
+    <article class="project-card-refined" data-title="AL-NOOR Islamic Streetwear" data-src="https://exquisite-sherbet-229293.netlify.app/">
+      <div class="card-image-section">
+        <div class="thumb" style="background-image:url('img/alnoor-thumbnail.png')"></div>
+        <div class="overlay"></div>
+      </div>
+      <div class="card-content-section">
+        <h3>AL-NOOR Islamic Streetwear</h3>
+        <p class="project-description-refined">Luxury e-commerce platform blending modesty with contemporary urban style. Features sophisticated product presentation and seamless shopping experience for modern consumers.</p>
+        <div class="card-footer-refined">
+          <div class="tech-stack-refined">
+            <div class="tech-icon" title="HTML5"><i class="fa-brands fa-html5"></i></div>
+            <div class="tech-icon" title="CSS3"><i class="fa-brands fa-css3-alt"></i></div>
+            <div class="tech-icon" title="JavaScript"><i class="fa-brands fa-js"></i></div>
+          </div>
+          <button class="preview-btn-refined" data-action="open" data-src="https://exquisite-sherbet-229293.netlify.app/">
+            <i class="fas fa-external-link-alt"></i> Preview
+          </button>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===== FIGMA PROJECTS ===== -->
+<section id="figma">
+  <h2 class="section-title">UI/UX Design Projects</h2>
+  <p class="lead-muted">Interactive prototypes and wireframes demonstrating user-centered design process and interface architecture.</p>
+  
+  <div class="portfolio-grid-refined">
+    <article class="project-card-refined" data-figma-preview="img/proj-1-preview.png" data-title="Luxury Fashion E-commerce">
+      <div class="card-image-section">
+        <div class="thumb" style="background-image:url('img/proj-1-preview.png')"></div>
+        <div class="overlay"></div>
+      </div>
+      <div class="card-content-section">
+        <h3>Luxury Fashion E-commerce</h3>
+        <p class="project-description-refined">High-fidelity wireframes for premium fashion retail platform. Focuses on elegant product presentation and streamlined checkout flow for luxury consumers.</p>
+        <div class="card-footer-refined">
+          <div class="tech-stack-refined">
+            <div class="tech-icon" title="Figma"><i class="fa-brands fa-figma"></i></div>
+            <div class="tech-icon" title="Prototyping"><i class="fas fa-mobile-alt"></i></div>
+            <div class="tech-icon" title="UI Design"><i class="fas fa-palette"></i></div>
+          </div>
+          <button class="preview-btn-refined" data-action="figma-preview">
+            <i class="fas fa-eye"></i> Preview
+          </button>
+        </div>
+      </div>
+    </article>
+    
+    <article class="project-card-refined" data-figma-preview="img/proj-2-preview.png" data-title="Hybrid Event Platform">
+      <div class="card-image-section">
+        <div class="thumb" style="background-image:url('img/proj-2-preview.png')"></div>
+        <div class="overlay"></div>
+      </div>
+      <div class="card-content-section">
+        <h3>Hybrid Event Platform</h3>
+        <p class="project-description-refined">Comprehensive event management interface supporting both virtual and in-person experiences. Features intuitive scheduling and interactive participant engagement tools.</p>
+        <div class="card-footer-refined">
+          <div class="tech-stack-refined">
+            <div class="tech-icon" title="Figma"><i class="fa-brands fa-figma"></i></div>
+            <div class="tech-icon" title="Wireframing"><i class="fas fa-object-group"></i></div>
+            <div class="tech-icon" title="UX Research"><i class="fas fa-users"></i></div>
+          </div>
+          <button class="preview-btn-refined" data-action="figma-preview">
+            <i class="fas fa-eye"></i> Preview
+          </button>
+        </div>
+      </div>
+    </article>
+    
+    <article class="project-card-refined" data-figma-preview="img/proj-3-preview.png" data-title="Mobile Commerce App">
+      <div class="card-image-section">
+        <div class="thumb" style="background-image:url('img/proj-3-preview.png')"></div>
+        <div class="overlay"></div>
+      </div>
+      <div class="card-content-section">
+        <h3>Mobile Commerce App</h3>
+        <p class="project-description-refined">E-commerce application prototype with focus on mobile-first design. Implements modern UI patterns for enhanced shopping experience and conversion optimization.</p>
+        <div class="card-footer-refined">
+          <div class="tech-stack-refined">
+            <div class="tech-icon" title="Figma"><i class="fa-brands fa-figma"></i></div>
+            <div class="tech-icon" title="Mobile Design"><i class="fas fa-mobile"></i></div>
+            <div class="tech-icon" title="Interaction Design"><i class="fas fa-hand-pointer"></i></div>
+          </div>
+          <button class="preview-btn-refined" data-action="figma-preview">
+            <i class="fas fa-eye"></i> Preview
+          </button>
+        </div>
+      </div>
+    </article>
+    
+    <article class="project-card-refined" data-figma-preview="img/proj-4-preview.png" data-title="Educational Portal Redesign">
+      <div class="card-image-section">
+        <div class="thumb" style="background-image:url('img/proj-4-preview.png')"></div>
+        <div class="overlay"></div>
+      </div>
+      <div class="card-content-section">
+        <h3>Educational Portal Redesign</h3>
+        <p class="project-description-refined">Institutional website redesign focusing on improved information architecture and user navigation. Enhances accessibility and content discoverability for diverse user groups.</p>
+        <div class="card-footer-refined">
+          <div class="tech-stack-refined">
+            <div class="tech-icon" title="Figma"><i class="fa-brands fa-figma"></i></div>
+            <div class="tech-icon" title="Information Architecture"><i class="fas fa-sitemap"></i></div>
+            <div class="tech-icon" title="Accessibility"><i class="fas fa-universal-access"></i></div>
+          </div>
+          <button class="preview-btn-refined" data-action="figma-preview">
+            <i class="fas fa-eye"></i> Preview
+          </button>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===== BRAND GUIDES ===== -->
+<section id="brand-guides">
+  <h2 class="section-title">Brand Identity Systems</h2>
+  <p class="lead-muted">Comprehensive brand guidelines demonstrating strategic visual identity development and design system implementation.</p>
+  
+  <div class="portfolio-grid-refined">
+    <article class="project-card-refined pdf-card" data-pdf="downloads/guide-1.pdf">
+      <div class="card-image-section">
+        <div class="thumb" style="background-image:url('img/guide-1-cover.png')"></div>
+        <div class="overlay"></div>
+      </div>
+      <div class="card-content-section">
+        <h3>Timeless Threads</h3>
+        <p class="project-description-refined">Complete brand identity for luxury fashion label. Establishes sophisticated visual language reflecting heritage craftsmanship and contemporary elegance for discerning clientele.</p>
+        <div class="card-footer-refined">
+          <div class="tech-stack-refined">
+            <div class="tech-icon" title="Adobe Illustrator"><i class="fas fa-pen-fancy"></i></div>
+            <div class="tech-icon" title="Brand Strategy"><i class="fas fa-chess-queen"></i></div>
+            <div class="tech-icon" title="Typography"><i class="fas fa-font"></i></div>
+          </div>
+          <button class="preview-btn-refined" data-action="pdf-preview">
+            <i class="fas fa-file-pdf"></i> Preview
+          </button>
+        </div>
+      </div>
+    </article>
+    
+    <article class="project-card-refined pdf-card" data-pdf="downloads/guide-2.pdf">
+      <div class="card-image-section">
+        <div class="thumb" style="background-image:url('img/guide-2-cover.png')"></div>
+        <div class="overlay"></div>
+      </div>
+      <div class="card-content-section">
+        <h3>Urban Housing Initiative</h3>
+        <p class="project-description-refined">Strategic concept development for social impact housing solution. Visual identity system communicates trust, innovation, and community-focused values.</p>
+        <div class="card-footer-refined">
+          <div class="tech-stack-refined">
+            <div class="tech-icon" title="Adobe Photoshop"><i class="fas fa-image"></i></div>
+            <div class="tech-icon" title="Concept Development"><i class="fas fa-lightbulb"></i></div>
+            <div class="tech-icon" title="Color Theory"><i class="fas fa-fill-drip"></i></div>
+          </div>
+          <button class="preview-btn-refined" data-action="pdf-preview">
+            <i class="fas fa-file-pdf"></i> Preview
+          </button>
+        </div>
+      </div>
+    </article>
+    
+    <article class="project-card-refined pdf-card" data-pdf="downloads/guide-3.pdf">
+      <div class="card-image-section">
+        <div class="thumb" style="background-image:url('img/guide-3-cover.png')"></div>
+        <div class="overlay"></div>
+      </div>
+      <div class="card-content-section">
+        <h3>Heritage Fashion Brand</h3>
+        <p class="project-description-refined">Comprehensive brand system for established fashion house. Balances traditional values with modern market positioning through cohesive visual storytelling.</p>
+        <div class="card-footer-refined">
+          <div class="tech-stack-refined">
+            <div class="tech-icon" title="Adobe InDesign"><i class="fas fa-book"></i></div>
+            <div class="tech-icon" title="Visual Identity"><i class="fas fa-palette"></i></div>
+            <div class="tech-icon" title="Brand Guidelines"><i class="fas fa-book-open"></i></div>
+          </div>
+          <button class="preview-btn-refined" data-action="pdf-preview">
+            <i class="fas fa-file-pdf"></i> Preview
+          </button>
+        </div>
+      </div>
+    </article>
+    
+    <article class="project-card-refined pdf-card" data-pdf="downloads/guide-4.pdf">
+      <div class="card-image-section">
+        <div class="thumb" style="background-image:url('img/guide-4-cover.png')"></div>
+        <div class="overlay"></div>
+      </div>
+      <div class="card-content-section">
+        <h3>Personal Brand System</h3>
+        <p class="project-description-refined">Strategic visual identity framework establishing professional design presence. Demonstrates systematic approach to personal branding and visual communication.</p>
+        <div class="card-footer-refined">
+          <div class="tech-stack-refined">
+            <div class="tech-icon" title="Logo Design"><i class="fas fa-signature"></i></div>
+            <div class="tech-icon" title="Adobe Creative Suite"><i class="fas fa-gem"></i></div>
+            <div class="tech-icon" title="Design Systems"><i class="fas fa-th-large"></i></div>
+          </div>
+          <button class="preview-btn-refined" data-action="pdf-preview">
+            <i class="fas fa-file-pdf"></i> Preview
+          </button>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+  <!-- ===== CERTIFICATES ===== -->
+  <section id="certificates" aria-labelledby="certificates-title">
+    <h2 class="section-title" id="certificates-title">LinkedIn Learning Certificates</h2>
+    <p class="lead-muted">Here are a few of my LinkedIn Learning course completions. More available upon request.</p>
+
+    <div class="certificates-grid">
+      <div class="certificate-card pdf-card" data-pdf="downloads/linkedin-1.pdf">
+        <div class="certificate-icon">
+          <i class="fas fa-certificate"></i>
+        </div>
+        <h3>Digital Marketing Tools</h3>
+        <p>Mastered essential digital marketing tools and platforms.</p>
+        <div class="certificate-actions">
+          <a href="downloads/linkedin-1.pdf" class="certificate-download" download aria-label="Download Digital Marketing Tools Certificate">
+            <i class="fas fa-download"></i> Download
+          </a>
+        </div>
+      </div>
+      
+      <div class="certificate-card pdf-card" data-pdf="downloads/linkedin-2.pdf">
+        <div class="certificate-icon">
+          <i class="fas fa-certificate"></i>
+        </div>
+        <h3>Content Strategy for Marketers</h3>
+        <p>Developed comprehensive content marketing strategies.</p>
+        <div class="certificate-actions">
+          <a href="downloads/linkedin-2.pdf" class="certificate-download" download aria-label="Download Content Strategy Certificate">
+            <i class="fas fa-download"></i> Download
+          </a>
+        </div>
+      </div>
+      
+      <div class="certificate-card pdf-card" data-pdf="downloads/linkedin-3.pdf">
+        <div class="certificate-icon">
+          <i class="fas fa-certificate"></i>
+        </div>
+        <h3>Business Benefits</h3>
+        <p>Understanding how to maximize business value.</p>
+        <div class="certificate-actions">
+          <a href="downloads/linkedin-3.pdf" class="certificate-download" download aria-label="Download Business Benefits Certificate">
+            <i class="fas fa-download"></i> Download
+          </a>
+        </div>
+      </div>
+      
+      <div class="certificate-card pdf-card" data-pdf="downloads/linkedin-4.pdf">
+        <div class="certificate-icon">
+          <i class="fas fa-certificate"></i>
+        </div>
+        <h3>Entrepreneurship</h3>
+        <p>Fundamentals of building and growing businesses.</p>
+        <div class="certificate-actions">
+          <a href="downloads/linkedin-4.pdf" class="certificate-download" download aria-label="Download Entrepreneurship Certificate">
+            <i class="fas fa-download"></i> Download
+          </a>
+        </div>
+      </div>
+      
+      <div class="certificate-card pdf-card" data-pdf="downloads/linkedin-5.pdf">
+        <div class="certificate-icon">
+          <i class="fas fa-certificate"></i>
+        </div>
+        <h3>Database Foundations</h3>
+        <p>Core concepts of database design and management.</p>
+        <div class="certificate-actions">
+          <a href="downloads/linkedin-5.pdf" class="certificate-download" download aria-label="Download Database Foundations Certificate">
+            <i class="fas fa-download"></i> Download
+          </a>
+        </div>
+      </div>
+      
+      <div class="certificate-card pdf-card" data-pdf="downloads/linkedin-6.pdf">
+        <div class="certificate-icon">
+          <i class="fas fa-certificate"></i>
+        </div>
+        <h3>Adobe Certified Associate</h3>
+        <p>Official certification in Adobe Creative Suite.</p>
+        <div class="certificate-actions">
+          <a href="downloads/linkedin-6.pdf" class="certificate-download" download aria-label="Download Adobe Certified Associate Certificate">
+            <i class="fas fa-download"></i> Download
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- ===== MODALS ===== -->
+<!-- Website Preview Modal -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-card" role="document" aria-labelledby="modal-title">
+    <div class="modal-header-refined">
+      <div class="modal-title-group">
+        <strong id="modal-title">Project Preview</strong>
+        <span id="modal-sub">Loading…</span>
+      </div>
+      <div class="modal-actions-refined">
+        <button id="modal-open-new" class="modal-btn-refined primary">
+          <i class="fas fa-external-link-alt"></i> Open Live
+        </button>
+        <button id="modal-close" class="modal-btn-refined secondary">
+          <i class="fas fa-times"></i> Close
+        </button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <iframe id="modal-iframe" class="modal-iframe" title="Project preview"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- Figma Preview Modal -->
+<div class="modal" id="figma-modal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-card" role="document" aria-labelledby="figma-modal-title">
+    <div class="modal-header-refined">
+      <div class="modal-title-group">
+        <strong id="figma-modal-title">Figma Design Preview</strong>
+        <span id="figma-modal-sub">UI/UX Design</span>
+      </div>
+      <div class="modal-actions-refined">
+        <button id="figma-modal-close" class="modal-btn-refined secondary">
+          <i class="fas fa-times"></i> Close
+        </button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div id="figma-modal-image" class="figma-modal-image">
+        <img src="" alt="Figma design preview" id="figma-preview-img">
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- ===== CONTACT & FOOTER ===== -->
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <p class="lead-muted">Let's connect — you can reach me via the contact links below.</p>
+
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Get in touch</h3>
+        <div class="contact-links">
+          <a class="contact-link" href="https://www.linkedin.com/in/mustafa-damon-05b55b237/" target="_blank" aria-label="Visit my LinkedIn profile">
+            <i class="fab fa-linkedin"></i>
+            <div>
+              <strong>LinkedIn</strong>
+              <span>Connect professionally</span>
+            </div>
+          </a>
+          <a class="contact-link" href="mailto:mustafadamon2911@gmail.com" aria-label="Send me an email">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <strong>Email</strong>
+              <span>mustafadamon2911@gmail.com</span>
+            </div>
+          </a>
+          <a class="contact-link" href="tel:+27764113687" aria-label="Call me">
+            <i class="fas fa-phone"></i>
+            <div>
+              <strong>Phone</strong>
+              <span>+27 76 411 3687</span>
+            </div>
+          </a>
+          <a class="contact-link" href="downloads/Mustafa Damon _ CV1.pdf" download aria-label="Download my resume">
+            <i class="fas fa-file-download"></i>
+            <div>
+              <strong>Resume</strong>
+              <span>Download my CV</span>
+            </div>
+          </a>
+        </div>
+        
+        <div class="availability">
+          <h4>Availability</h4>
+          <p>I'm currently available for freelance projects and full-time opportunities. Feel free to reach out!</p>
+          <div class="status-indicator">
+            <div class="status-dot available"></div>
+            <span>Available for work</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="foot">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="logo">MD</div>
+          <div>
+            <h3>Mustafa Damon</h3>
+            <p>Multimedia Designer</p>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#portfolio">Work</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/mustafa-damon-05b55b237/" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="mailto:mustafadamon2911@gmail.com" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> Mustafa Damon. All rights reserved.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BACK TO TOP BUTTON ===== -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="script.js"></script>  
+</body>
+</html>
