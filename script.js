@@ -6,7 +6,6 @@ const $$ = s => Array.from(document.querySelectorAll(s));
 function initializePortfolio() {
   console.log('Initializing portfolio...');
   
-  // Emergency loader timeout
   setTimeout(() => {
     const loader = $('#loader');
     if (loader && !loader.classList.contains('hidden')) {
@@ -32,7 +31,6 @@ function initializePortfolio() {
   console.log('Portfolio initialization complete');
 }
 
-// Initialize when DOM is ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initializePortfolio);
 } else {
@@ -533,7 +531,6 @@ function initTechIcons() {
 
 // ===== REFINED PROJECT CARD FUNCTIONALITY =====
 function initRefinedProjectCards() {
-  // Website preview buttons
   $$('.project-card-refined .preview-btn-refined[data-action="open"]').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -549,7 +546,6 @@ function initRefinedProjectCards() {
     });
   });
 
-  // Figma preview buttons
   $$('.project-card-refined .preview-btn-refined[data-action="figma-preview"]').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -566,7 +562,6 @@ function initRefinedProjectCards() {
     });
   });
 
-  // PDF preview buttons for brand guides
   $$('.project-card-refined .preview-btn-refined[data-action="pdf-preview"]').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -582,10 +577,8 @@ function initRefinedProjectCards() {
     });
   });
 
-  // PDF card click functionality (opens PDF on card click)
   $$('.project-card-refined.pdf-card').forEach(card => {
     card.addEventListener('click', (e) => {
-      // Don't trigger if clicking on button or tech icons
       if (e.target.closest('.preview-btn-refined') || e.target.closest('.tech-icon')) {
         return;
       }
@@ -600,7 +593,6 @@ function initRefinedProjectCards() {
 
 // ===== CERTIFICATE CARD FUNCTIONALITY =====
 function initCertificateCards() {
-  // PDF preview buttons for certificates
   $$('.certificate-card .preview-btn-refined[data-action="pdf-preview"]').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -616,10 +608,8 @@ function initCertificateCards() {
     });
   });
 
-  // Certificate card click functionality (opens PDF on card click)
   $$('.certificate-card.pdf-card').forEach(card => {
     card.addEventListener('click', (e) => {
-      // Don't trigger if clicking on button or download link
       if (e.target.closest('.preview-btn-refined') || e.target.closest('.certificate-download')) {
         return;
       }
@@ -643,7 +633,6 @@ function openWebsiteModal(src, title) {
   
   if (!modal || !iframe) return;
   
-  // Fix accessibility - set aria-hidden to false before showing
   modal.setAttribute('aria-hidden', 'false');
   
   if (modalTitle) modalTitle.textContent = title;
@@ -652,19 +641,16 @@ function openWebsiteModal(src, title) {
   modal.classList.add('show');
   document.body.style.overflow = 'hidden';
   
-  // Update the "Open live" button
   if (modalOpenNew) {
     modalOpenNew.onclick = () => {
       window.open(src, '_blank');
     };
   }
   
-  // Update close functionality with proper accessibility
   if (modalClose) {
     const closeModal = () => {
       modal.classList.remove('show');
       iframe.src = 'about:blank';
-      // Set aria-hidden to true after hiding
       setTimeout(() => {
         modal.setAttribute('aria-hidden', 'true');
       }, 300);
@@ -673,7 +659,6 @@ function openWebsiteModal(src, title) {
     
     modalClose.onclick = closeModal;
     
-    // Close on background click
     modal.addEventListener('click', function backgroundClickHandler(e) {
       if (e.target === modal) {
         closeModal();
@@ -681,7 +666,6 @@ function openWebsiteModal(src, title) {
       }
     });
     
-    // Close on escape key
     const escapeHandler = (e) => {
       if (e.key === 'Escape' && modal.classList.contains('show')) {
         closeModal();
@@ -690,7 +674,6 @@ function openWebsiteModal(src, title) {
     };
     document.addEventListener('keydown', escapeHandler);
     
-    // Focus management
     modalClose.focus();
   }
 }
@@ -704,7 +687,6 @@ function openFigmaModal(imageSrc, title) {
   
   if (!modal || !previewImg) return;
   
-  // Fix accessibility - set aria-hidden to false before showing
   modal.setAttribute('aria-hidden', 'false');
   
   if (modalTitle) modalTitle.textContent = title;
@@ -714,11 +696,9 @@ function openFigmaModal(imageSrc, title) {
   modal.classList.add('show');
   document.body.style.overflow = 'hidden';
   
-  // Update close functionality with proper accessibility
   if (modalClose) {
     const closeModal = () => {
       modal.classList.remove('show');
-      // Set aria-hidden to true after hiding
       setTimeout(() => {
         modal.setAttribute('aria-hidden', 'true');
       }, 300);
@@ -727,7 +707,6 @@ function openFigmaModal(imageSrc, title) {
     
     modalClose.onclick = closeModal;
     
-    // Close on background click
     modal.addEventListener('click', function backgroundClickHandler(e) {
       if (e.target === modal) {
         closeModal();
@@ -735,7 +714,6 @@ function openFigmaModal(imageSrc, title) {
       }
     });
     
-    // Close on escape key
     const escapeHandler = (e) => {
       if (e.key === 'Escape' && modal.classList.contains('show')) {
         closeModal();
@@ -744,7 +722,6 @@ function openFigmaModal(imageSrc, title) {
     };
     document.addEventListener('keydown', escapeHandler);
     
-    // Focus management
     modalClose.focus();
   }
 }
@@ -753,14 +730,9 @@ function openFigmaModal(imageSrc, title) {
 function initLegacyModalSupport() {
   const modal = $('#modal');
   const iframe = $('#modal-iframe');
-  const modalTitle = $('#modal-title');
-  const modalSub = $('#modal-sub');
-  const modalClose = $('#modal-close');
-  const modalOpenNew = $('#modal-open-new');
   
   if (!modal || !iframe) return;
   
-  // Support for old project cards
   $$('.project-btn[data-action="open"]').forEach(btn => {
     btn.addEventListener('click', () => {
       const project = btn.closest('.project');
@@ -790,7 +762,6 @@ window.addEventListener('error', (e) => {
 });
 
 // ===== PERFORMANCE OPTIMIZATIONS =====
-// Debounce scroll events for better performance
 function debounce(func, wait) {
   let timeout;
   return function executedFunction(...args) {
@@ -803,12 +774,9 @@ function debounce(func, wait) {
   };
 }
 
-// Optimized scroll handlers
 window.addEventListener('scroll', debounce(() => {
-  // Any scroll-based functionality can go here
 }, 10));
 
-// Preload critical images
 function preloadCriticalImages() {
   const criticalImages = [
     './img/my-image.jpg',
@@ -822,7 +790,6 @@ function preloadCriticalImages() {
   });
 }
 
-// Initialize performance optimizations when page is idle
 if ('requestIdleCallback' in window) {
   window.requestIdleCallback(preloadCriticalImages);
 } else {
