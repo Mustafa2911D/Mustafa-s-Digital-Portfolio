@@ -2517,6 +2517,12 @@ body:not(.keyboard-nav) [tabindex]:focus {
 
   .role {
     font-size: 18px;
+    justify-content: center; 
+    text-align: center;
+  }
+  
+  .hero-copy {
+    text-align: center;
   }
 
   .lead {
