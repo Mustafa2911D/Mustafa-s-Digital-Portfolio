@@ -330,6 +330,10 @@ nav {
   font-size: 20px;
   color: var(--accent);
   font-weight: 600;
+  height: 1.5em; 
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .lead {
