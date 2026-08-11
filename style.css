@@ -1,4 +1,4 @@
-/* style.css – Full Updated Styles with Frosty Glass Menu */
+/* style.css – Full Updated Styles with Unified Typography */
 
 /* ===== CSS VARIABLES & THEME ===== */
 :root {
@@ -28,6 +28,57 @@
   --shadow: rgba(2, 6, 23, 0.1);
   --nav-active-bg: rgba(255, 118, 0, 0.10);
   --nav-active-color: var(--accent);
+}
+
+/* ===== TYPOGRAPHY – UNIFIED ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ff-display);
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+/* Override specific elements that should stay sans-serif */
+.brand-text h1,
+.brand-text .brand-subtitle,
+.navlinks a,
+.hero-tagline,
+.greeting-text,
+.bio-role,
+.skill-name,
+.skill-percent,
+.edu-degree,
+.tool-chip,
+.exp-title,
+.exp-date-badge,
+.process-kicker,
+.step-kicker,
+.process-mini-label,
+.contact-link span,
+.footer-links a,
+.footer-bottom p,
+.certificate-card p,
+.project-description-refined,
+.modal-title-group span,
+.modal-btn-refined,
+.preview-btn-refined,
+.bio-tag,
+.stat-label,
+.section-subtitle,
+.hero-cta-row .btn,
+.btn,
+.process-check-list li,
+.timeline-content p,
+.step-description,
+.process-intro-main p,
+.availability p,
+.contact-link strong,
+.contact-link span {
+  font-family: var(--ff-sans);
+}
+
+/* SECTION TITLES – use display font */
+.section-header .section-title {
+  font-family: var(--ff-display);
 }
 
 /* ===== BASE ===== */
@@ -555,7 +606,7 @@ nav {
   margin-bottom: 48px;
 }
 .section-header .section-title {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--ff-display);
   font-size: 40px;
   margin: 0 0 8px;
   display: block;
@@ -666,6 +717,10 @@ nav {
   background: var(--accent);
   margin-bottom: 16px;
   border-radius: 1px;
+}
+/* Center the bio paragraphs */
+.bio-card .bio-text {
+  text-align: center;
 }
 .bio-text {
   font-size: 15px;
@@ -1991,10 +2046,6 @@ section[id] { scroll-margin-top: 96px; }
 
 /* ============================================================
    FROSTY GLASS MOBILE NAV — FINAL AUTHORITATIVE VERSION
-   Replaces all previous mobile nav overrides with a single,
-   clear, frosty-glass implementation. All functionality remains
-   unchanged – only the visual appearance is updated for better
-   readability.
    ============================================================ */
 @media (max-width: 1100px) {
     header {
